@@ -87,5 +87,7 @@
     \end{strip}
 }
 
-
+\renewenvironment{abstract}
+{\bfseries \abstractname:}
+{}
 
