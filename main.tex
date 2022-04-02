@@ -24,6 +24,7 @@
 \usepackage{cuted}
 \usepackage{hyperref}
 \usepackage{float}
+\usepackage{booktabs}
 \let\underscore\_                                           % underscore sign
 \let\xor\^                                                  % xor sign
 \renewcommand\_[2][1]{\ifmmode _{\textnormal{\scalebox{#1}{#2}}}\else\underscore#2\fi} %roman subscript
@@ -47,6 +48,8 @@
     #1
   \end{equation}
 }
+
+\graphicspath{{fig/}}
 
 
 \begin{document} %Change these according to your background etc.
@@ -94,30 +97,30 @@ Tables can be included as either one column or two column tables. Two column tab
 
 
 %Multicols does not support float objects. Therefore, one workaround is to use \begin{center}, which centers everything and then you can use the \captionof command to add the proper caption. 
-\begin{center}
-\captionof{table}{Example of a table and table caption.} %This creates a caption for a table
+    \begin{table}[h]
+\caption{Example of a table and table caption.} %This creates a caption for a table
 \label{tab:ExampleTable}
 \begin{tabularx}{\columnwidth}{XXX} %This command ensures that the table is always as wide as the column allows it to be. ONLY WORKS WITH "X", no other letter macros.
-\hline
+\toprule
 Column 1 & Column 2 & Column 3 \\
-\hhline{===} %This is the horizontal line after the table headers.
+\midrule %This is the horizontal line after the table headers.
 Item 1   & Item 2   & Item 3   \\
 Item a   & Item b   & Item c   \\
-\hline
+\bottomrule
 \end{tabularx}
-\end{center}
+\end{table}
 
 There should be one empty line after the table to separate it from the rest of the text.
-\columnbreak %This ensure that the text after this will flow into the next column. Use this to tidy up columns and overall layout when finishing the report.
+% \columnbreak %This ensure that the text after this will flow into the next column. Use this to tidy up columns and overall layout when finishing the report.
 \section*{FIGURES}
 Figures can be included as either one column or two column figures. Two column figures should be placed either at the top or bottom of the page, centered, typeset in the same font as the main text and numbered consecutively.
 
 %Use a \begin{center} with an \includegraphics[width=\columnwidth] to insert an image with the exact width of the column
-\begin{center}
-    \includegraphics[width = \columnwidth]{Figures/CFM test.png}
-    \captionof{figure}{Example of a figure and a figure caption} %Creates a figure caption.
+\begin{figure}
+    \includegraphics[width = \columnwidth]{cfm_test.png}
+    \caption{Example of a figure and a figure caption} %Creates a figure caption.
     \label{fig:ExampleFigure}
-\end{center}
+\end{figure}
 
 Pay attention to the size of the text in the figures. The text size should be such that it is easily legible. Avoid excessive margins around the figure and crop the figure accordingly if necessary.
 
