@@ -15,7 +15,6 @@
 \usepackage{graphicx} %Necessary for \includegraphics more options
 \usepackage[english]{babel} %Language support
 \usepackage{mathptmx} %Times new roman LaTeX version
-\usepackage{multicol} %Necessary to create the two columns and adjust space between them
 \usepackage{titlesec} %Necessary for section and subsection formatting
 \usepackage{tabularx} %Necessary for full column width tabular definition
 \usepackage{caption} %Necessary for \captionof use
