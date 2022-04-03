@@ -2,13 +2,24 @@
 %course. Authored by Theo Eklund.
 %In case of any problems, contact the teacher in charge.
 
-\documentclass{cfm_paper} %extarticle class needed to use 9pt font size
-\addbibresource{references.bib} %This should be your bib file
+% cfm_paper.cls should be in the same directory or in your default tex 
+% dir (e.g. ~/texmf/tex/latex/...)
+\documentclass{cfm_paper}
+
+% This file contains your references. Don't hurt yourself and use citation 
+% manager to generate it for you (Mendeley, JabRef,...) or use the "Cite" 
+% button (available e.g. on ScienceDirect, Google Scholar etc.)
+%
+% Refer to 
+% https://libguides.aalto.fi/citation_guide 
+% for additional help.
+\addbibresource{references.bib} 
 
 \graphicspath{{fig/}}
 
-\begin{document} %Change these according to your background etc.
+\begin{document}
 
+% Change these according to your background etc.
 \title{Title of your paper}
 \author{Firstname Lastname}
 \university{Aalto University}
@@ -48,22 +59,21 @@ The numbering should be flush to the right edge of the column. You can get this 
 Tables can be included as either one column or two column tables. Two column tables should be placed either at the top or bottom of the page, centered, typeset in the same font as the main text and numbered consecutively. The table should not have any borders, but there should be a horizontal line separating the column headings.
 
 
-%Multicols does not support float objects. Therefore, one workaround is to use \begin{center}, which centers everything and then you can use the \captionof command to add the proper caption. 
-    \begin{table}[h]
-\caption{Example of a table and table caption.} %This creates a caption for a table
-\label{tab:ExampleTable}
-\begin{tabularx}{\columnwidth}{XXX} %This command ensures that the table is always as wide as the column allows it to be. ONLY WORKS WITH "X", no other letter macros.
-\toprule
-Column 1 & Column 2 & Column 3 \\
-\midrule %This is the horizontal line after the table headers.
-Item 1   & Item 2   & Item 3   \\
-Item a   & Item b   & Item c   \\
-\bottomrule
-\end{tabularx}
+\begin{table}[h]
+    \caption{Example of a table and table caption.} % Table captions are recommended above.
+    \label{tab:ExampleTable}
+    \begin{tabularx}{\columnwidth}{XXX} %This command ensures that the table is always as wide as the column allows it to be. ONLY WORKS WITH "X", no other letter macros.
+        \toprule % change to \hline if you use tables with vertical lines
+        Column 1 & Column 2 & Column 3 \\
+        \midrule %This is the horizontal line after the table headers.
+        Item 1   & Item 2   & Item 3   \\
+        Item a   & Item b   & Item c   \\
+        \bottomrule
+    \end{tabularx}
 \end{table}
 
 There should be one empty line after the table to separate it from the rest of the text.
-% \columnbreak %This ensure that the text after this will flow into the next column. Use this to tidy up columns and overall layout when finishing the report.
+
 \section*{FIGURES}
 Figures can be included as either one column or two column figures. Two column figures should be placed either at the top or bottom of the page, centered, typeset in the same font as the main text and numbered consecutively.
 
