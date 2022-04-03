@@ -17,18 +17,21 @@
 \usepackage{mathptmx} %Times new roman LaTeX version
 \usepackage{titlesec} %Necessary for section and subsection formatting
 \usepackage{tabularx} %Necessary for full column width tabular definition
-\usepackage{caption} %Necessary for \captionof use
+\usepackage{caption} % TODO: is still needed?
 \usepackage[style = ieee, sorting = nyt, backend=biber]{biblatex} %Biblatex, with predefined ieee style referencing.
 \usepackage{csquotes} %This is used for citations
-\usepackage{hhline} %For double lines in tables
-\usepackage{paralist}
-\usepackage{siunitx}
+\usepackage{paralist} % Provides \compactitem and \compactenum list types
+\usepackage{siunitx} % Easier typing of units and numbers
 \usepackage{cuted}
-\usepackage{hyperref}
-\usepackage{float}
-\usepackage{booktabs}
+\usepackage{hyperref} % Clickable references
+\usepackage{float} % Provides [H] option for force float placement. Not recommended unless you have a good reason for it.
+\usepackage{booktabs} % Fancy table horizontal lines
 
 
+% Easy typing of antiqua (non-itallic) lower and upper indices in math mode 
+% using \_{ind}, \^{ind} (instead of lengthy _{\mathrm{ind}})
+% taken from 
+% https://github.com/fykosak/fks-texmf/blob/master/texmf/tex/latex/fks/fkssugar.sty
 
 \let\underscore\_                                           % underscore sign
 \let\xor\^                                                  % xor sign
@@ -47,12 +50,14 @@
 \titleformat{\subsection}{\normalsize\bfseries}{\thesection}{}{} %Subsections are bold but normalsized
 \titlespacing*{\subsection}{0pt}{0.1cm}{0cm} %Fixes the amount of white-space above/below subsection headers
 
+% syntactic sugar for easier typing of equations
 \newcommand{\eq}[1]{
   \begin{equation}
     #1
   \end{equation}
 }
 
+% override title and abstract
 \newcommand{\University}{}
 
 \newcommand{\university}[1]{
